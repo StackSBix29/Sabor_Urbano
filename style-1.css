@@ -123,3 +123,41 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     background-color: #1A1A1A;
 }
+/* --- 4. ANIMACIONES DE SCROLL (¡NUEVO!) --- */
+
+/* --- Animación del Logo GRANDE (Hero) --- */
+/* Le damos una transición suave para que el 'opacity' se anime */
+.main-logo {
+    width: 150px;
+    transition: opacity 0.3s ease-out;
+    will-change: opacity; /* Optimización para el navegador */
+}
+
+/* --- Animación del Logo PEQUEÑO (Navbar) --- */
+/* Controlamos el espacio entre el logo pequeño y el texto */
+#mainNavbar .navbar-brand img {
+    margin-right: 10px;
+}
+
+/* El texto "Sabor Urbano" de la Navbar */
+#navbar-brand-text {
+    display: inline-block; /* Necesario para 'transform' */
+    
+    /* 1. ESTADO INICIAL (Oculto) */
+    opacity: 0;
+    transform: translateX(-100%); /* Lo mueve a la izquierda, detrás del logo */
+    
+    /* 2. TRANSICIÓN (Cómo se anima) */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition-delay: 0.2s; /* Espera 0.2s antes de empezar (efecto cool) */
+    
+    will-change: opacity, transform; /* Optimización */
+}
+
+/* 3. ESTADO FINAL (Visible) */
+/* Cuando la navbar tiene la clase 'navbar-visible'... */
+#mainNavbar.navbar-visible #navbar-brand-text {
+    /* ...lo hacemos visible y lo movemos a su lugar original */
+    opacity: 1;
+    transform: translateX(0);
+}

@@ -1,33 +1,44 @@
-// Selecciona la barra de navegación por su ID
+// Selecciona los elementos que vamos to animar
 const navbar = document.getElementById('mainNavbar');
-// Define el punto de scroll donde la navbar debería aparecer (ej. 100px desde arriba)
+const heroLogo = document.querySelector('.main-logo'); // El logo grande del Hero
+
+// Define el punto de scroll donde la navbar debería aparecer
 const scrollPoint = 100; 
 
 // Función que se ejecuta cada vez que el usuario hace scroll
 window.addEventListener('scroll', () => {
-    // Si el usuario ha hecho scroll más allá del 'scrollPoint'
-    if (window.scrollY > scrollPoint) {
-        // Añade la clase 'navbar-visible' y quita la 'navbar-hidden'
+    
+    // Obtiene la posición actual del scroll
+    const scrollPosition = window.scrollY;
+
+    // --- ANIMACIÓN 1: Desvanecer el Logo Grande ---
+    // Calcula la opacidad: 1 (visible) al inicio, 0 (invisible) al llegar a 300px
+    // Puedes jugar con el número '300' para que se desvanezca más rápido o lento
+    const opacity = 1 - (scrollPosition / 300);
+    
+    // Aplica la opacidad al logo grande, pero nunca menos de 0
+    if (heroLogo) {
+        heroLogo.style.opacity = Math.max(0, opacity);
+    }
+
+    // --- ANIMACIÓN 2: Mostrar/Ocultar la Navbar ---
+    if (scrollPosition > scrollPoint) {
+        // Añade la clase 'navbar-visible' (esto también dispara la animación del texto en CSS)
         navbar.classList.add('navbar-visible');
         navbar.classList.remove('navbar-hidden');
     } else {
-        // Si el usuario está arriba de nuevo, oculta la navbar
+        // Oculta la navbar
         navbar.classList.add('navbar-hidden');
         navbar.classList.remove('navbar-visible');
     }
 });
 
-// Suavizar el scroll al hacer clic en enlaces del menú
-// Esta parte no es 100% necesaria si Bootstrap 5 la maneja, pero es buena práctica
+// Suavizar el scroll al hacer clic en enlaces del menú (sin cambios)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        // Previene el salto brusco
         e.preventDefault();
-
-        // Obtiene el destino del enlace
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            // Desplaza suavemente hacia el destino
             target.scrollIntoView({
                 behavior: 'smooth'
             });

@@ -1,130 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sabor Urbano - (Con Bootstrap 5)</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
 
-    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top navbar-hidden">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#hero">
-                <img src="images/logo-mini.png" alt="Logo Pequeño" class="d-inline-block align-text-top" style="height: 30px; margin-right: 10px;">
-                Sabor Urbano
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menú</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#nosotros">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav
+      id="mainNavbar"
+      class="navbar navbar-expand-lg navbar-dark fixed-top navbar-hidden"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#hero">
+          <img
+            src="images/Apoco si tilin.jpeg"
+            alt="Logo Pequeño"
+            class="d-inline-block align-text-top"
+            style="height: 30px"
+          />
+          <span id="navbar-brand-text">Sabor Urbano</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menú</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nosotros">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-    <header id="hero" class="hero-section d-flex justify-content-center align-items-center text-center">
-        <div class="hero-content text-white">
-            <img src="images/logo-grande.png" alt="Sabor Urbano Logo Grande" class="main-logo mb-4">
-            <h1 class="display-3 fw-bold">Sabor Urbano</h1>
-            <p class="lead mb-4">El mejor café de especialidad de la ciudad.</p>
-            <a href="#menu" class="btn btn-cafe btn-lg fw-bold">Ver Menú</a>
-        </div>
+    <header
+      id="hero"
+      class="hero-section d-flex justify-content-center align-items-center text-center"
+    >
+      <div class="hero-content text-white">
+        <img
+          src="images/Apoco si tilin.jpeg"
+          alt="Sabor Urbano Logo Grande"
+          class="main-logo mb-4"
+        />
+        <h1 class="display-3 fw-bold">Sabor Urbano</h1>
+        <p class="lead mb-4">El mejor café de especialidad de la ciudad.</p>
+        <a href="#menu" class="btn btn-cafe btn-lg fw-bold">Ver Menú</a>
+      </div>
     </header>
 
     <section id="menu" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 display-4">Nuestro Menú</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <h3 class="card-title text-cafe">Café</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Espresso</li>
-                                <li class="list-group-item">Latte</li>
-                                <li class="list-group-item">Cappuccino</li>
-                                <li class="list-group-item">Americano</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body text-center">
-                            <h3 class="card-title text-cafe">Postres</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Croissant</li>
-                                <li class="list-group-item">Brownie</li>
-                                <li class="list-group-item">Tarta de Queso</li>
-                                <li class="list-group-item">Muffin</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100 shadow-sm bg-submenu">
-                        <div class="card-body text-center">
-                            <h3 class="card-title text-cafe">Comida</h3>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Sandwich de Pavo</li>
-                                <li class="list-group-item">Ensalada César</li>
-                                <li class="list-group-item">Wrap de Pollo</li>
-                                <li class="list-group-item">Chilaquiles</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="text-center mb-5 display-4">Nuestro Menú</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h3 class="card-title text-cafe">Café</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Espresso</li>
+                  <li class="list-group-item">Latte</li>
+                  <li class="list-group-item">Cappuccino</li>
+                  <li class="list-group-item">Americano</li>
+                </ul>
+              </div>
             </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <h3 class="card-title text-cafe">Postres</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Croissant</li>
+                  <li class="list-group-item">Brownie</li>
+                  <li class="list-group-item">Tarta de Queso</li>
+                  <li class="list-group-item">Muffin</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm bg-submenu">
+              <div class="card-body text-center">
+                <h3 class="card-title text-cafe">Comida</h3>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Sandwich de Pavo</li>
+                  <li class="list-group-item">Ensalada César</li>
+                  <li class="list-group-item">Wrap de Pollo</li>
+                  <li class="list-group-item">Chilaquiles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <section id="nosotros" class="py-5 bg-subinfo"> 
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2 class="display-5">Sobre Nosotros</h2>
-                    <p class="lead">En Sabor Urbano, la pasión por el café de especialidad nos impulsa. Creemos en la calidad de cada grano y en la conexión que una buena taza de café puede crear.</p>
-                    <p>Visítanos y descubre por qué somos el rincón favorito de la ciudad.</p>
-                </div>
-                <div class="col-md-6">
-                    <img src="images/coffee-shop.jpg" alt="Interior de la cafetería" class="img-fluid rounded shadow">
-                </div>
-            </div>
+    <section id="nosotros" class="py-5 bg-subinfo">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2 class="display-5">Sobre Nosotros</h2>
+            <p class="lead">
+              En Sabor Urbano, la pasión por el café de especialidad nos
+              impulsa. Creemos en la calidad de cada grano y en la conexión que
+              una buena taza de café puede crear.
+            </p>
+            <p>
+              Visítanos y descubre por qué somos el rincón favorito de la
+              ciudad.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="images/coffee-shop.jpg"
+              alt="Interior de la cafetería"
+              class="img-fluid rounded shadow"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <section id="contacto" class="py-5">
-        <div class="container text-center">
-            <h2 class="display-5 mb-4">Visítanos</h2>
-            <p class="lead">Dirección: Calle Falsa 123, Colonia Centro</p>
-            <p class="lead">Teléfono: 55-1234-5678</p>
-            <p class="lead">Horario: Lunes a Sábado de 8am a 8pm</p>
-        </div>
+      <div class="container text-center">
+        <h2 class="display-5 mb-4">Visítanos</h2>
+        <p class="lead">Dirección: Calle Falsa 123, Colonia Centro</p>
+        <p class="lead">Teléfono: 55-1234-5678</p>
+        <p class="lead">Horario: Lunes a Sábado de 8am a 8pm</p>
+      </div>
     </section>
 
     <footer class="py-4 bg-cafe-dark text-white text-center">
-        <div class="container">
-            <p class="mb-0">Sabor Urbano &copy; 2025. Todos los derechos reservados.</p>
-        </div>
+      <div class="container">
+        <p class="mb-0">
+          Sabor Urbano &copy; 2025. Todos los derechos reservados.
+        </p>
+      </div>
     </footer>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

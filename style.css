@@ -1,69 +1,79 @@
 /* --- Paleta de Colores ---
-Base (Crema):      #F8F5F2
-Principal (Negro): #1A1A1A
-Secundario (Caoba): #6B3F2E
-Acento (Dorado):   #FFC107
-Fondo Oscuro (Espresso): #3C2F2F
+Base (Beige Claro):   #F5EFE6
+Principal (Gris Oscuro): #4A4A4A
+Secundario (Marrón):    #6B4F4B
+Acento (Caramelo):    #A47551
+Fondo Oscuro (Carbón): #3A3A3A
 --------------------------- */
 
 /* --- 1. Estilos Globales (Base y Tipografía) --- */
 body {
-    background-color: #333333; /* Color Base (Crema) */
-    color: #000000;           /* Color Principal (Negro Urbano) para párrafos */
+    background-color: #F5EFE6; /* Color Base (Beige Claro) */
+    color: #4A4A4A;           /* Color Principal (Gris Oscuro) para párrafos */
 }
 
-/* Títulos con el color Marrón Caoba */
+/* Títulos con el color Marrón */
 h1, h2, h3, h4, h5, h6 {
-    color: #6B3F2E;
+    color: #6B4F4B;
     font-weight: 700;
 }
 
 /* --- 2. Clases Personalizadas de Bootstrap --- */
 
-/* Color de texto "Café" (Marrón Caoba) */
-/* Lo usamos en los títulos de las tarjetas del menú */
+/* Color de texto "Café" (Marrón) */
 .text-cafe {
-    color: #6B3F2E !important; 
+    color: #6B4F4B !important; 
 }
 
-/* Botón de Acento (Dorado Ámbar) */
+/* Botón de Acento (Caramelo) */
 .btn-cafe {
-    background-color: #FFC107; /* Acento Dorado */
-    border-color: #FFC107;
-    color: #1A1A1A; /* Texto NEGRO (mucho más legible sobre amarillo) */
+    background-color: #A47551; /* Acento Caramelo */
+    border-color: #A47551;
+    color: #FFFFFF; /* Texto Blanco para mejor contraste */
     font-weight: 600;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-.bg-subinfo{
-    background-color: #000000;
-    color: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-cafe:hover {
-    background-color: #E0A800; /* Dorado más oscuro al pasar el ratón */
-    border-color: #E0A800;
-    color: #7c0a0a;
+    background-color: #8e6644; /* Caramelo más oscuro */
+    border-color: #8e6644;
+    color: #FFFFFF;
+    transform: translateY(-2px); /* Ligero efecto de levantamiento */
 }
 
-/* Fondo oscuro (Marrón Espresso) */
-/* Lo usaremos para el Footer */
+/* Fondo oscuro (Carbón) */
 .bg-cafe-dark {
-    background-color: #3C2F2F;
+    background-color: #3A3A3A;
 }
 
 /* --- 3. Estilos de Secciones Específicas --- */
 
-/* --- HERO (Boceto #1) --- */
+/* Estilo para la sección "Nosotros" */
+.bg-nosotros {
+    background-color: #EAE0D5;
+}
+
+/* --- HERO --- */
 .hero-section {
     height: 100vh;
-    background-image: url('images/hero-background.jpg');
-    background-size: cover;
-    background-position: center;
     position: relative;
     overflow: hidden;
 }
 
-/* Overlay oscuro (igual que antes) */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/cafeteria\(dentro\).png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    transform: scale(1.05); /* Evita bordes vacíos por el desenfoque */
+    z-index: 1;
+}
+
 .hero-section::before {
     content: "";
     position: absolute;
@@ -72,44 +82,40 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2; /* Superposición oscura sobre el fondo */
 }
 
 .hero-content {
     position: relative;
-    z-index: 10;
+    z-index: 10; /* El z-index original era 10, lo mantenemos */
 }
 
 .main-logo {
     width: 150px;
 }
 
-/* --- NAVBAR (Boceto #2) --- */
-/* ¡NUEVO ESTILO! Navbar Oscura para un look "Urbano" */
+/* --- NAVBAR --- */
 #mainNavbar {
-    background-color: #3C2F2F; /* Fondo Oscuro (Marrón Espresso) */
+    background-color: #3A3A3A; /* Fondo Oscuro (Carbón) */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     transition: transform 0.3s ease-in-out;
 }
 
-/* Hacemos los enlaces de la navbar legibles (blancos/crema) */
 #mainNavbar .navbar-brand,
 #mainNavbar .nav-link {
-    color: #af773f !important; /* Texto Crema/Blanco sobre fondo oscuro */
+    color: #F5EFE6 !important; /* Texto Beige sobre fondo oscuro */
     font-weight: 500;
 }
 
-/* Al pasar el ratón, usamos el Acento Dorado */
 #mainNavbar .navbar-brand:hover,
 #mainNavbar .nav-link:hover {
-    color: #c2940a !important; 
+    color: #A47551 !important; /* Acento Caramelo al pasar el ratón */
 }
 
-/* Arreglamos el botón "hamburguesa" para que sea blanco */
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(248, 245, 242, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(245, 239, 230, 0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Animación de la Navbar (igual que antes) */
 .navbar-hidden {
     transform: translateY(-100%);
 }
@@ -121,43 +127,167 @@ h1, h2, h3, h4, h5, h6 {
 /* --- SECCIÓN MENÚ --- */
 .card {
     border: none;
-    background-color: #1A1A1A;
+    background-color: #FFFFFF; /* Fondo blanco para las tarjetas */
+    border-radius: 15px; /* Bordes más redondeados */
+    overflow: hidden; /* Asegura que nada se salga de los bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra más sutil */
 }
-/* --- 4. ANIMACIONES DE SCROLL (¡NUEVO!) --- */
 
-/* --- Animación del Logo GRANDE (Hero) --- */
-/* Le damos una transición suave para que el 'opacity' se anime */
+.card-body {
+    position: relative; /* Necesario para posicionar los iconos flotantes */
+}
+
+/* Estilos para el efecto "Glassmorphism" en la lista del menú */
+.card .list-group-flush {
+    border-radius: 10px; /* Redondear las esquinas de la lista */
+    overflow: hidden;    /* Asegurar que el efecto de blur no se salga */
+    -webkit-backdrop-filter: blur(4px); /* Desenfoque para Safari */
+    backdrop-filter: blur(4px);         /* Desenfoque estándar */
+}
+
+.card .list-group-item {
+    background-color: rgba(255, 255, 255, 0.35) !important; /* Fondo blanco semitransparente */
+    border: none; /* Quitar bordes que pueda añadir Bootstrap */
+}
+
+/* Ocultar los ítems extra del menú por defecto */
+.extra-item {
+    display: none;
+}
+
+/* --- 4. ANIMACIONES --- */
+
 .main-logo {
     width: 150px;
     transition: opacity 0.3s ease-out;
-    will-change: opacity; /* Optimización para el navegador */
+    will-change: opacity;
 }
 
-/* --- Animación del Logo PEQUEÑO (Navbar) --- */
-/* Controlamos el espacio entre el logo pequeño y el texto */
 #mainNavbar .navbar-brand img {
     margin-right: 10px;
 }
 
-/* El texto "Sabor Urbano" de la Navbar */
 #navbar-brand-text {
-    display: inline-block; /* Necesario para 'transform' */
-    
-    /* 1. ESTADO INICIAL (Oculto) */
+    display: inline-block;
     opacity: 0;
-    transform: translateX(-100%); /* Lo mueve a la izquierda, detrás del logo */
-    
-    /* 2. TRANSICIÓN (Cómo se anima) */
+    transform: translateX(-100%);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    transition-delay: 0.2s; /* Espera 0.2s antes de empezar (efecto cool) */
-    
-    will-change: opacity, transform; /* Optimización */
+    transition-delay: 0.2s;
+    will-change: opacity, transform;
 }
 
-/* 3. ESTADO FINAL (Visible) */
-/* Cuando la navbar tiene la clase 'navbar-visible'... */
+
+
 #mainNavbar.navbar-visible #navbar-brand-text {
-    /* ...lo hacemos visible y lo movemos a su lugar original */
+
     opacity: 1;
+
     transform: translateX(0);
+
 }
+
+
+
+/* --- 5. ANIMACIONES DE ICONOS FLOTANTES --- */
+
+.floating-icons {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none; /* Para que no interfieran con el ratón */
+
+    overflow: hidden;
+
+}
+
+
+
+.floating-icons .icon {
+
+    position: absolute;
+
+    font-size: 2rem; /* Tamaño de los iconos */
+
+    opacity: 0; /* Ocultos por defecto */
+
+    animation-duration: 10s;
+
+    animation-iteration-count: infinite;
+
+    animation-timing-function: linear;
+
+}
+
+
+
+/* Cuando se añade la clase 'animate', los iconos aparecen y se animan */
+
+.animate .icon {
+
+    opacity: 0.15; /* Una opacidad sutil */
+
+}
+
+
+
+/* Asignamos las animaciones a cada icono */
+
+.animate .icon:nth-child(1) { animation-name: float1; animation-delay: 0s; }
+
+.animate .icon:nth-child(2) { animation-name: float2; animation-delay: 2s; }
+
+.animate .icon:nth-child(3) { animation-name: float3; animation-delay: 5s; }
+
+.animate .icon:nth-child(4) { animation-name: float1; animation-delay: 7s; }
+
+.animate .icon:nth-child(5) { animation-name: float3; animation-delay: 8s; }
+
+
+
+
+
+@keyframes float1 {
+
+    0% { transform: translate(0, 100%); }
+
+    50% { transform: translate(80px, -20%); }
+
+    100% { transform: translate(0, -150%) rotate(360deg); }
+
+}
+
+
+
+@keyframes float2 {
+
+    0% { transform: translate(100%, 100%); }
+
+    50% { transform: translate(20%, 50%); }
+
+    100% { transform: translate(120%, -100%) rotate(720deg); }
+
+}
+
+
+
+@keyframes float3 {
+
+    0% { transform: translate(50%, 120%); }
+
+    50% { transform: translate(100px, 20%); }
+
+    100% { transform: translate(30px, -120%) rotate(-360deg); }
+
+}
+
+
+
+

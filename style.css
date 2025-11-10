@@ -1,0 +1,163 @@
+/* --- Paleta de Colores ---
+Base (Crema):      #F8F5F2
+Principal (Negro): #1A1A1A
+Secundario (Caoba): #6B3F2E
+Acento (Dorado):   #FFC107
+Fondo Oscuro (Espresso): #3C2F2F
+--------------------------- */
+
+/* --- 1. Estilos Globales (Base y Tipografía) --- */
+body {
+    background-color: #333333; /* Color Base (Crema) */
+    color: #000000;           /* Color Principal (Negro Urbano) para párrafos */
+}
+
+/* Títulos con el color Marrón Caoba */
+h1, h2, h3, h4, h5, h6 {
+    color: #6B3F2E;
+    font-weight: 700;
+}
+
+/* --- 2. Clases Personalizadas de Bootstrap --- */
+
+/* Color de texto "Café" (Marrón Caoba) */
+/* Lo usamos en los títulos de las tarjetas del menú */
+.text-cafe {
+    color: #6B3F2E !important; 
+}
+
+/* Botón de Acento (Dorado Ámbar) */
+.btn-cafe {
+    background-color: #FFC107; /* Acento Dorado */
+    border-color: #FFC107;
+    color: #1A1A1A; /* Texto NEGRO (mucho más legible sobre amarillo) */
+    font-weight: 600;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.bg-subinfo{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.btn-cafe:hover {
+    background-color: #E0A800; /* Dorado más oscuro al pasar el ratón */
+    border-color: #E0A800;
+    color: #7c0a0a;
+}
+
+/* Fondo oscuro (Marrón Espresso) */
+/* Lo usaremos para el Footer */
+.bg-cafe-dark {
+    background-color: #3C2F2F;
+}
+
+/* --- 3. Estilos de Secciones Específicas --- */
+
+/* --- HERO (Boceto #1) --- */
+.hero-section {
+    height: 100vh;
+    background-image: url('images/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay oscuro (igual que antes) */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.main-logo {
+    width: 150px;
+}
+
+/* --- NAVBAR (Boceto #2) --- */
+/* ¡NUEVO ESTILO! Navbar Oscura para un look "Urbano" */
+#mainNavbar {
+    background-color: #3C2F2F; /* Fondo Oscuro (Marrón Espresso) */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hacemos los enlaces de la navbar legibles (blancos/crema) */
+#mainNavbar .navbar-brand,
+#mainNavbar .nav-link {
+    color: #af773f !important; /* Texto Crema/Blanco sobre fondo oscuro */
+    font-weight: 500;
+}
+
+/* Al pasar el ratón, usamos el Acento Dorado */
+#mainNavbar .navbar-brand:hover,
+#mainNavbar .nav-link:hover {
+    color: #c2940a !important; 
+}
+
+/* Arreglamos el botón "hamburguesa" para que sea blanco */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(248, 245, 242, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Animación de la Navbar (igual que antes) */
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar-visible {
+    transform: translateY(0);
+}
+
+/* --- SECCIÓN MENÚ --- */
+.card {
+    border: none;
+    background-color: #1A1A1A;
+}
+/* --- 4. ANIMACIONES DE SCROLL (¡NUEVO!) --- */
+
+/* --- Animación del Logo GRANDE (Hero) --- */
+/* Le damos una transición suave para que el 'opacity' se anime */
+.main-logo {
+    width: 150px;
+    transition: opacity 0.3s ease-out;
+    will-change: opacity; /* Optimización para el navegador */
+}
+
+/* --- Animación del Logo PEQUEÑO (Navbar) --- */
+/* Controlamos el espacio entre el logo pequeño y el texto */
+#mainNavbar .navbar-brand img {
+    margin-right: 10px;
+}
+
+/* El texto "Sabor Urbano" de la Navbar */
+#navbar-brand-text {
+    display: inline-block; /* Necesario para 'transform' */
+    
+    /* 1. ESTADO INICIAL (Oculto) */
+    opacity: 0;
+    transform: translateX(-100%); /* Lo mueve a la izquierda, detrás del logo */
+    
+    /* 2. TRANSICIÓN (Cómo se anima) */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition-delay: 0.2s; /* Espera 0.2s antes de empezar (efecto cool) */
+    
+    will-change: opacity, transform; /* Optimización */
+}
+
+/* 3. ESTADO FINAL (Visible) */
+/* Cuando la navbar tiene la clase 'navbar-visible'... */
+#mainNavbar.navbar-visible #navbar-brand-text {
+    /* ...lo hacemos visible y lo movemos a su lugar original */
+    opacity: 1;
+    transform: translateX(0);
+}
